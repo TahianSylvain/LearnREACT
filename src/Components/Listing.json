@@ -1,0 +1,11 @@
+{
+    "shop": "Alasora",
+    "product": [
+        {"id": 1, "category": "fruits",     "name": "apple",  "cost": "$1.59"},
+        {"id": 2, "category": "vegetables", "name": "celery", "cost": "$0.89"},
+        {"id": 3, "category": "vegetables", "name": "carrot", "cost": "$0.67"},
+        {"id": 4, "category": "fruits",     "name": "ananas", "cost": "$1.79"},
+        {"id": 5, "category": "meats",      "name": "rabbit", "cost": "$79.99"},
+        {"id": 2, "category": "meats",      "name": "chicken", "cost": "$34.99"}
+    ]
+}
