@@ -28,47 +28,85 @@ export const Jet = (props, children) => {
     ))
 
     function handleFind(e){
+        const selectedName = e.target.value
         setReach({nom: e.target.value})
+        const filteredProducts = product.filter(
+            item => selectedName === item.name.slice(0, selectedName.length)
+        )
+        const items = filteredProducts.map(item=>(
+                    <li key={item.id}>
+                        <p>
+                            { item.name } {item.category } <i>{ item.cost }</i>
+                        </p>
+                         <button type="button" onClick={()=>{alert('Bought!')}}>
+                            Buy
+                         </button>
+                     </li>
+        ))
+        setTarget(items)
+
         // INTERESTING BUG
-        for(let i=0; i<product.length; i++){  
-            if (reach.nom === product[i].name) {
-                setTarget(
-                    <li key={product[i].id}>
-                        <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
-                        <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
-                    </li>
-                )
-            }
-        }
+        // for(let i=0; i<product.length; i++){  
+        //     if (reach.nom === product[i].name) {
+        //         setTarget(
+        //             <li key={product[i].id}>
+        //                 <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
+        //                 <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
+        //             </li>
+        //         )
+        //     }
+        // }
     }
 
     function handleFilter(e){
-        console.log(cat.mark)
-        for(let i=0; i<product.length; i++){
-            if (cat.mark === product[i].category) {
-                console.log(product[i])
-                setTarget(
-                    <li key={product[i].id}>
-                        <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
-                        <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
-                    </li>
-                )
-            }
-        }
-        setCat({mark: e.target.value})
+            const selectedCategory = e.target.value;
+            setCat({ mark: selectedCategory });
+            const filteredProducts = product.filter(
+                item => item.category === selectedCategory || selectedCategory === "*"
+            );
+            const items = filteredProducts.map(item => (
+                <li key={item.id}>
+                    <p>
+                        {item.name} {item.category} <i>{item.cost}</i>
+                    </p>
+                    <button type="button" onClick={() => alert('Bought!')}>
+                        Buy
+                    </button>
+                </li>
+            ));
+            setTarget(items);
+
+    //     for(let i=0; i<product.length; i++){
+    //         if (cat.mark === product[i].category) {
+    //             console.log(product[i])
+    //             setTarget(
+    //                 <li key={product[i].id}>
+    //                     <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
+    //                     <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
+    //                 </li>
+    //             )
+    //         }
+    //     }
+    //     setCat({mark: e.target.value})
+    //}
     }
 
     return <div>
         <label htmlFor="pointing">Search</label>
-        <input type="search" name="pointing" id="find" 
-             placeholder="Find your item followed by 's' " value={reach.nom} onChange={handleFind}/>
+        <input
+            type="search"
+            name="pointing"
+            id="find"
+            placeholder="Find your item followed by 's'"
+            value={reach.nom}
+            onChange={handleFind}
+        />
         <select name="categorifying" id="choose" value={cat.mark} onChange={handleFilter}>
+            <option value="*">Default</option>
             <option value="meats">meats</option>
             <option value="fruits">fruits</option>
             <option value="vegetables">vegetables</option>
         </select>
-        <ul>
-            {target}
-        </ul>
+        <ul>{target}</ul>
     </div>
 }

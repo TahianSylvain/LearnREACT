@@ -11,7 +11,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Clock></Clock>
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" 
+          alt="logo" />
         <Jet>{shop}</Jet>
       </header>
     </div>
