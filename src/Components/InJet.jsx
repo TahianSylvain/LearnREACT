@@ -1,5 +1,17 @@
 import React, { useState } from 'react'
+
+
 // import { product } from "./Listing.json"
+import product from './Listing.json'
+//     const product = [
+//         {id: 1, category: "fruits",     name: "apple",   cost: "$1.59"},
+//         {id: 2, category: "vegetables", name: "celery",  cost: "$0.89"},
+//         {id: 3, category: "vegetables", name: "carrot",  cost: "$0.67"},
+//         {id: 4, category: "fruits",     name: "ananas",  cost: "$1.79"},
+//         {id: 5, category: "meats",      name: "rabbit",  cost: "$79.99"},
+//         {id: 6, category: "meats",      name: "chicken", cost: "$34.99"}
+//     ]
+
 
 export const Clock = (props) => {
     const [now, setNow] = useState(new Date())
@@ -8,15 +20,8 @@ export const Clock = (props) => {
 }
 
 
-export const Jet = (props, children) => {
-    const product = [
-        {id: 1, category: "fruits",     name: "apple",   cost: "$1.59"},
-        {id: 2, category: "vegetables", name: "celery",  cost: "$0.89"},
-        {id: 3, category: "vegetables", name: "carrot",  cost: "$0.67"},
-        {id: 4, category: "fruits",     name: "ananas",  cost: "$1.79"},
-        {id: 5, category: "meats",      name: "rabbit",  cost: "$79.99"},
-        {id: 6, category: "meats",      name: "chicken", cost: "$34.99"}
-    ]
+export const Jet = (child) => {
+    console.log(child)
     const [reach, setReach] = useState({nom: ''})
     const [cat, setCat] = useState({mark: ''})
 
@@ -91,7 +96,7 @@ export const Jet = (props, children) => {
     //}
     }
 
-    return <div>
+    return <div> <h3>"AlasoraGrosFound"</h3>
         <label htmlFor="pointing">Search</label>
         <input
             type="search"
