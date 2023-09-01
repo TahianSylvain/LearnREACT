@@ -47,12 +47,12 @@ export const Jet = (props, children) => {
         for(let i=0; i<product.length; i++){
             if (cat.mark === product[i].category) {
                 console.log(product[i])
-                // setTarget(
-                //     <li key={product[i].id}>
-                //         <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
-                //         <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
-                //     </li>
-                // )
+                setTarget(
+                    <li key={product[i].id}>
+                        <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
+                        <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
+                    </li>
+                )
             }
         }
         setCat({mark: e.target.value})
