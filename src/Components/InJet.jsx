@@ -18,12 +18,12 @@ export const Clock = (props) => {
 
 
 export const Jet = (child) => {
-    console.log(child)
+    // console.log(child)
     const [reach, setReach] = useState({nom: ''})
     const [cat, setCat] = useState({mark: ''})
 
     const [target, setTarget] = useState(product.map(
-        (item) => <li key={item.id}>
+        (item) => <li key={item.id}>{item.id}
             <p>{ item.name } { item.category } <i>{ item.cost }</i></p>
             <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
         </li>
@@ -36,7 +36,7 @@ export const Jet = (child) => {
             item => selectedName === item.name.slice(0, selectedName.length)
         )
         const items = filteredProducts.map(item=>(
-                    <li key={item.id}>
+                    <li key={item.id}>{item.id}
                         <p>
                             { item.name } {item.category } <i>{ item.cost }</i>
                         </p>
@@ -46,28 +46,16 @@ export const Jet = (child) => {
                      </li>
         ))
         setTarget(items)
-
-        // INTERESTING BUG
-        // for(let i=0; i<product.length; i++){  
-        //     if (reach.nom === product[i].name) {
-        //         setTarget(
-        //             <li key={product[i].id}>
-        //                 <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
-        //                 <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
-        //             </li>
-        //         )
-        //     }
-        // }
     }
 
     function handleFilter(e){
             const selectedCategory = e.target.value;
             setCat({ mark: selectedCategory });
             const filteredProducts = product.filter(
-                item => item.category === selectedCategory || selectedCategory === "*"
+                item => item.category === selectedCategory || selectedCategory === "*" // specified or default 
             );
             const items = filteredProducts.map(item => (
-                <li key={item.id}>
+                <li key={item.id}>{item.id}
                     <p>
                         {item.name} {item.category} <i>{item.cost}</i>
                     </p>
@@ -77,20 +65,7 @@ export const Jet = (child) => {
                 </li>
             ));
             setTarget(items);
-
-    //     for(let i=0; i<product.length; i++){
-    //         if (cat.mark === product[i].category) {
-    //             console.log(product[i])
-    //             setTarget(
-    //                 <li key={product[i].id}>
-    //                     <p>{ product[i].name } {product[i].category } <i>{ product[i].cost }</i></p>
-    //                     <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
-    //                 </li>
-    //             )
-    //         }
-    //     }
-    //     setCat({mark: e.target.value})
-    //}
+            console.log(target)
     }
 
     return <div> <h3>"AlasoraGrosFound"</h3>
