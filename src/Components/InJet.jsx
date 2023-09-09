@@ -1,7 +1,4 @@
 import React, { useState } from 'react'
-
-
-// import { product } from "./Listing.json"
 import product from './Listing.json'
 //     const product = [
 //         {id: 1, category: "fruits",     name: "apple",   cost: "$1.59"},
