@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.copyright {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 100px;
+    font-size: 0.8rem;
+    font-family: font_light;
+    color: rgb(210, 210, 210);
+    background-color: #24262b30;
+}
+.copyright p {
+    display: flex;
+    font-family: font_light;
+    align-items: center;
+
+}
+.copyright a {
+    text-decoration: none;
+    font-family: font_light;
+    font-size: 0.7rem;
+    color: rgb(210, 210, 210);
+}
+.copyright a:hover {
+    text-decoration: underline;
+}
