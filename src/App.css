@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,4 +67,11 @@
 }
 .copyright a:hover {
     text-decoration: underline;
+}
+
+.painter {
+  paint-order:stroke markers fill
+}
+#settings_1_ {
+  fill:#ffffff;fill-opacity:1;stroke-width:40.7284584
 }

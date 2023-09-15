@@ -323,3 +323,7 @@
     transform: scale(1.1);
     background-color: var(--dark_blue);
 }
+.sidebar{
+    width: 66px;
+    height: fit-content;
+}
