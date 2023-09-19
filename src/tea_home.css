@@ -9,7 +9,9 @@
 .body {
     overflow: hidden;
 }
-
+.fillStroke{
+    paint-order:markers stroke fill;
+}
 .tea_block {
     position: relative;
     width: 100%;
@@ -49,6 +51,7 @@
 .row {
     display: flex;
     padding: 5px 30px;
+    text-decoration: none;
 }
 .course_header_table span {
     color: white;
@@ -223,11 +226,11 @@
     position: relative;
     width: max-content;
     height: max-content;
-    margin: 100px auto;
+    margin: 10px auto;
     padding: 30px;
-    background-color: var(--background_color);
     border-radius: 5px;
-    box-shadow: 0px 2px 30px -8px var(--dark_blue);
+    /* background-color: var(--background_color);
+    box-shadow: 0px 2px 30px -8px var(--dark_blue); */
 }
 
 .create_course_header {
@@ -268,6 +271,7 @@
     font-size: 00.8rem;
     background-color: #fff;
     border-radius: 5px;
+    cursor: pointer;
 }
 .input_file p {
     width: 75%;
@@ -326,4 +330,30 @@
 .sidebar{
     width: 66px;
     height: fit-content;
+}
+#course_video{
+    display: none;
+}
+.sidebar{
+    height: revert;
+}
+#_paint_{
+    paint-order:stroke markers fill;
+}
+
+/* Add this CSS in your stylesheet */
+#find{
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    font-weight: bold; /* Adjust font weight if needed */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    width: 100%; /* Make the input width 100% */
+}
+/* Style the placeholder text */
+#find::placeholder {
+    color: #ccc; /* Placeholder text color */
+    font-weight: normal; /* Adjust font weight if needed */
+    /* Other styles as needed */
 }

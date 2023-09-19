@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import product from './Listing.json'
+import product from './Course.json'
 
 
 export const Clock = (props) => {
@@ -11,33 +11,14 @@ export const Clock = (props) => {
 
 export const InteractiveSearch = () => {
     const [reach, setReach] = useState({nom: ''})
-    // const [cat, setCat] = useState({mark: ''})
 
-    const [target, setTarget] = useState(product.map(
-        (item) => <li key={item.id}>{item.id}
-            <p>{ item.name } { item.category } <i>{ item.cost }</i></p>
-            <button type="button" onClick={()=>{alert('Bought!')}}>Buy</button>
-        </li>
-    ))
-
-    function handleFind(e){
+    function handleFind ( e ) {
         const selectedName = e.target.value
         setReach({nom: e.target.value})
-        const filteredProducts = product.filter(
-            item => selectedName === item.name.slice(0, selectedName.length)
-        )
-        const items = filteredProducts.map(item=>(
-                    <li key={item.id}>{item.id}
-                        <p>
-                            { item.name } {item.category } <i>{ item.cost }</i>
-                        </p>
-                         <button type="button" onClick={()=>{alert('Bought!')}}>
-                            Buy
-                         </button>
-                     </li>
-        ))
-        setTarget(items)
-        console.log(target)
+        const filteredProducts = product.filter( item =>
+            selectedName === item.title.slice(0, selectedName.length)
+        );
+        console.log(filteredProducts)
     }
 
     return <div>
@@ -45,13 +26,14 @@ export const InteractiveSearch = () => {
             type="search"
             name="pointing"
             id="find"
-            placeholder="Find your item followed by 's'"
+            placeholder="Search for course"
             value={reach.nom}
             onChange={handleFind}
         />
     </div>
 }
 
+    // const [cat, setCat] = useState({mark: ''})
     // function handleFilter(e){
     //         const selectedCategory = e.target.value;
     //         setCat({ mark: selectedCategory });
