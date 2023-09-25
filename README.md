@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Module: (SearchBAR,  FilterSELECTION)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,0 +1,5 @@
+[
+    {"id": 1, "name": "UCM",      "departement": "Fiscal"},
+    {"id": 2, "name": "ISPM",     "departement": "ISAIA4"},
+    {"id": 3, "name": "CNTEMAD",  "departement": "TelCom"}
+]
