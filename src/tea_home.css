@@ -72,7 +72,6 @@
 }
 .course_list .row span {
     font-size: 0.8rem;
-    /* font-family: font_light; */
 }
 .col1 {
     width: 60%;
@@ -112,7 +111,7 @@
 /* ======= ASIDE ======= */
 .aside_container {
     position: relative;
-    width: var(--aside_width);
+    width: 750px;
     height: 100%;
     /* background-color: seagreen; */
 }
@@ -356,4 +355,13 @@
     color: #ccc; /* Placeholder text color */
     font-weight: normal; /* Adjust font weight if needed */
     /* Other styles as needed */
+}
+
+.new--course{
+    width: 100%;
+    height: 100%;
+}
+.new--row{
+    background-color: linear-gradient(to left, #ff1053d0, #2441e7d0);
+    text-decoration: none;
 }

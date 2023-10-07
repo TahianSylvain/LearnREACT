@@ -1,0 +1,9 @@
+@media screen and (min-width: 360px) and (max-width: 380px) {
+    #strong{
+        display: none;
+    }
+    #tim {
+        display:none;
+    }
+
+}

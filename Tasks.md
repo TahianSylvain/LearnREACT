@@ -1,13 +1,14 @@
 /simulationData.jsonify
 /find good svg according to the target  
-trouver un bien plus beau input-file design en React           
-schedule emploie-fu-temps.prof
-logo-ISPM.jpeg    to      .webp                                  
+/schedule emploie-fu-temps.prof
+problem: main.width VS aside.width
+problem: comment enlever les heures(pause, blanks)
+problem: logo-ISPM.jpeg                                    
 responsivity                                                     
-axios API   drf                                                     
+axios API   drf                                                
 Clock-component doit pas bouger tous le temps, affectant InteractiveSearch-component.               
-3d.js                                                            
-tf.js                                                            
+#Card_on_CylindricRotation(Right/Left)   3d.js                                                       
+tf.js       ploty.js Clutsering(not task)                                                     
 
 
 QUESTION:

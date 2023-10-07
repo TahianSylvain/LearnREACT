@@ -4,13 +4,30 @@ import './homeee.css';
 import './scrollbarrr.css';
 import './carousel2.css';
 import './tea_home.css';
+import './Responsive.css'
+
+import axios from 'axios';
+// import { Schedule } from './Components/Schedule.jsx';
 import { InteractiveSearch, Clock } from './Components/RepairedInJet';
 import {DeptUL, CourseList, InstitutList} from './Components/UserInterface';
-import { useState, useRef } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
 
 
 function App() {
+  useEffect(
+    () => {
+      // Make a GET request
+      axios.get('http://localhost:8000/api/for-a-prof')
+      .then(response => {
+        // Handle the response data
+        console.log(response.data);
+      })
+      .catch(error => {
+        // Handle any errors
+        console.error('An error occurred:', error);
+      });
+    }, []
+  )
     const [state, setState] = useState({
         enter: ""
     })
@@ -22,16 +39,34 @@ function App() {
         }
     };    
     const Nouveau = () => {
-        if (state.enter==="")
+        const date = new Date();
+        // const options = { year: '2-digit', month: '2-digit', day: '2-digit' };
+        // const formattedDate = date.toLocaleDateString('en-GB', options);
+
+        if (state.enter === "")
             return(<></>)
-        else
-            return(<div className="course_list">
-            <a classe="row" href="/url/">
-                <span className="col col1"> {state.enter} </span>
-                <span className="col col2"> {new Date().toLocaleDateString()} </span>
-                <span className="col col3"> now </span>
-            </a>
-        </div>)
+        else // AZA ATAO ANATY ./NewFile.css ireo style={{}} ireo fa potika
+            return(
+            <div className="new--course" style={{
+                            width: "100%",
+                            height: "100%"
+                        }}>
+                <a classe="new--row" href="/url/" style={{
+                            textDecoration: "None",
+                            fontSize: "0.9rem", 
+                            fontFamily: "primary_font",             
+                            display: "flex",
+                            padding: "5px 30px",
+                        }}>
+                    <span style={{ width: "60%",  }}> {state.enter} </span>
+                    <span style={{ width: "20%", textAlign:"center" }}> 
+                        {date.getDay()<10 ? "0"+date.getDay().toString():date.getDay().toString()}-
+                        {date.getMonth()<10 ? "0"+date.getMonth().toString(): date.getMonth().toString()}-
+                        {date.getFullYear().toString().slice(2, )}
+                     </span>
+                    <span style={{ width: "20%", textAlign:"center" }}> now </span>
+                </a>
+            </div>)
     }
     function handleText(e){
         setState({enter: e.target.value})
@@ -52,7 +87,7 @@ function App() {
                 <div className="logo">
                     <div className="logo_img">
                         <img src="./lvlind9.webp" width="40px" height="40px" alt="project" />
-                        <img src="./logo-ISPM.webp" width="40px" height="40px" alt="ispm" />
+                        <img src="./logoISPM.webp" width="40px" height="40px" alt="ispm" />
                     </div>
                 </div>
                 <nav>
@@ -129,7 +164,7 @@ function App() {
                     
                     <div className="stu_header">
                         <div className="topbar_container">
-                            <strong>LevelMind</strong>
+                            <strong id="strong">LevelMind</strong>
                                 <Clock/> 
                             <InteractiveSearch/>
 <svg width="20" height="20" version="1.1" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -150,7 +185,8 @@ function App() {
                     </div>
 
                 </div>
-                <div className="main_content"><div className="tea_block">
+                <div className="main_content">
+    <div className="tea_block">
 
         <main className="courses_container">
             <div className="course_list_container">
@@ -182,7 +218,6 @@ function App() {
                 <h3>Add course</h3>
             </header>
             <form method="post" encType="multipart/form-data">
-                {/* {% csrf_token %} */}
                 <div className="input_group course_title">
                     <label htmlFor="course_title">Title</label>
                     <input type="text" id="course_title" name="title" value={state.enter} onChange={handleText}/>
@@ -211,11 +246,11 @@ function App() {
 <aside className="aside_container">
     <div className="aside_content">
         <div className="emploie-temps">
-            <img src="" width="400" height="500" alt="" id="schedule" />
+            {  true || <div src="" alt="schedule" height="300px" width="500px" ></div> } {/*<Schedule/> */}
         </div>
         <header className="aside_header">
             <h4>
-                Todo list ----------------
+                Todo list
 <svg width="18" height="18" version="1.1" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
 <path transform="rotate(-90)" d="m-12.4 8h6.75c0.346 0 0.625 0.446 0.625 1s-0.279 1-0.625 1h-6.75c-0.346 0-0.625-0.446-0.625-1s0.279-1 0.625-1z" fill="#fff"/>
 <path d="m5.75 8h6.5c0.416 0 0.75 0.446 0.75 1s-0.334 1-0.75 1h-6.5c-0.416 0-0.75-0.446-0.75-1s0.334-1 0.75-1z" fill="#fff"/>
