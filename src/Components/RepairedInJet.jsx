@@ -24,9 +24,10 @@ export const InteractiveSearch = () => {
 
     return <div>
         <input
+            id="find"
             type="search"
             name="pointing"
-            id="find"
+            color=''
             placeholder="Search for course"
             value={reach.nom}
             onChange={handleFind}

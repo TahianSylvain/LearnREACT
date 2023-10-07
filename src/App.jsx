@@ -5,13 +5,29 @@ import './scrollbarrr.css';
 import './carousel2.css';
 import './tea_home.css';
 import './Responsive.css'
-import { Schedule } from './Components/Schedule.jsx';
+
+import axios from 'axios';
+// import { Schedule } from './Components/Schedule.jsx';
 import { InteractiveSearch, Clock } from './Components/RepairedInJet';
 import {DeptUL, CourseList, InstitutList} from './Components/UserInterface';
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 
 function App() {
+  useEffect(
+    () => {
+      // Make a GET request
+      axios.get('http://localhost:8000/api/for-a-prof')
+      .then(response => {
+        // Handle the response data
+        console.log(response.data);
+      })
+      .catch(error => {
+        // Handle any errors
+        console.error('An error occurred:', error);
+      });
+    }, []
+  )
     const [state, setState] = useState({
         enter: ""
     })
@@ -230,7 +246,7 @@ function App() {
 <aside className="aside_container">
     <div className="aside_content">
         <div className="emploie-temps">
-            <Schedule></Schedule> 
+            {  true || <div src="" alt="schedule" height="300px" width="500px" ></div> } {/*<Schedule/> */}
         </div>
         <header className="aside_header">
             <h4>
